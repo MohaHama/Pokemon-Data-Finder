@@ -1,9 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title></title>
+    <meta charset="UTF-8" />
+    <title>Pokémon Finder</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+<main class="app">
+    <h1 class="title">Pokémon Finder</h1>
+
+    <form id="searchForm" class="controls">
+        <input type="text" id="PokemonName" placeholder="Search Pokémon (ex. pikachu)" />
+        <button type="submit">Fetch Info</button>
+    </form>
+
+    <section class="pokedex">
+        <!-- Venstre: slider -->
+        <div class="card slider">
+            <div class="slides">
+                <img class="slide" id="PokemonImg" alt="Pokémon image" style="display:none">
+            </div>
+            <button class="nav prev" type="button" aria-label="Forrige" onclick="prevSlide()">&#10094;</button>
+            <button class="nav next" type="button" aria-label="Næste" onclick="nextSlide()">&#10095;</button>
+        </div>
+
+        <!-- Højre: info -->
+        <div class="card info">
+            <div class="header">
+                <h2 id="displayName">—</h2>
+                <span id="pid" class="id">#0000</span>
+            </div>
+
+            <div class="chips" id="types"></div>
+
+            <div class="grid-2">
+                <div>
+                    <div class="label">Abilities</div>
+                    <div id="abilities">—</div>
+                </div>
+                <div>
+                    <div class="label">Height</div>
+                    <div id="height">—</div>
+                </div>
+                <div>
+                    <div class="label">Weight</div>
+                    <div id="weight">—</div>
+                </div>
+            </div>
+
+            <div class="label mt">Base stats</div>
+            <div id="stats" class="stats"></div>
+        </div>
+    </section>
+</main>
+
+<script src="script.js"></script>
 </body>
 </html>
